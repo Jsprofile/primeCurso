@@ -145,8 +145,9 @@ html, body{
 }
 
 body {
-  background: var(--background-dark);
+  background: var(--background-light);
 }
+
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -336,6 +337,74 @@ a {
   align-items: center;
 }
 
+.grid2 .left{
+  align-items: flex-start;
+}
+
+.grid2 .right{
+  align-items: flex-end;
+}
+
+.inverter .left{
+  order: 2;
+  align-items: flex-end;
+}
+
+.inverter .right{
+  order: 1;
+  align-items: flex-start;
+}
+
+
+
+/*--------------- Differentials ---------------*/
+
+.differentialsSetion{
+  max-width: 100vw;
+  min-height: 300px;
+  padding: var(--box-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5vh;
+}
+
+.differentials{
+  max-width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+
+.differentials .card{
+  width: 100%;
+  height: 100%;
+  background-color: #232224;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 10px;
+  gap: 20px;
+}
+
+.differentials .card img{
+  max-width: 50px;
+}
+
+.differentials .card h4{
+  color: #e7e7e7;
+  font-size: 1.2em;
+}
+
+.differentials .card p{
+  color: #c7c7c7;
+  font-size: 1em;
+}
+
 
 
 
@@ -375,5 +444,46 @@ a {
   .btn-primary a{
     font-size: 14px;
   }
+
+  .grid2 .left, .grid2 .right, .inverter .left, .inverter .right{
+    align-items: center;
+  }
+
+  .inverter .left{
+    order: 1;
+  }
+  
+  .inverter .right{
+    order: 2;
+  }
+
+
+  
+/*--------------- Differentials ---------------*/
+
+.differentialsSetion{
+  max-width: 100vw;
+  min-height: 300px;
+  padding: var(--box-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5vh;
+}
+
+.differentials{
+  max-width: 100%;
+  height: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.differentials .card{
+  width: 80vw;
+}
+
 
 }
