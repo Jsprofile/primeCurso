@@ -189,6 +189,104 @@ header a span::before {
     margin-top: 5vh;
 }
 
+
+.popupWrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.459);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000000000;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    animation: smoothApear .5s forwards;
+    overflow: scroll;
+  }
+  
+  .popup{
+    width: 95vw;
+    height: 95vh;
+    background-color: var(--background-light);
+    border-radius: var(--borderRadius);
+    position: relative;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    overflow-x: hidden;
+    overflow-y: visible;
+    animation: fadeDown .8s .4s forwards;
+    opacity: 0;
+  }
+  
+  .popup::-webkit-scrollbar-track{
+    background: #070c0e00;
+    border-radius: 30px;
+  }
+  
+  .popupCloser{
+    max-width: 35px;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    z-index: 1000000;
+  }
+  
+  .popup h3{
+    color: #562EED;
+    font-size: 50px;
+  }
+  
+  .popup .img-text{
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  
+  .img-text + .img-text{
+    margin-top: 10vh;
+  }
+  
+  .popup .img-text .left{
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3vh;
+  }
+  
+  .popup .img-text  h4{
+    color: var(--primary_dark);
+    font-size: 38px;
+    font-weight: 900;
+  }
+  
+  .popup .img-text  img{
+    height: 100%;
+    max-height: 80vh;
+    object-fit: cover;
+  }
+  
+  .popup .img-text .right:has(img){
+    align-items: flex-start;
+  }
+  
+  .popup .img-text .right .ebookImg{
+    transform: translateX(0);
+  }
+  
+  .popup .img-text  .right img{
+    transform: translateX(15%);
+  }
+  
+  .popup .inverter .right img{
+    transform: translateX(-25%) ;
+  }
+
 @media(max-width: 800px){
     .theCourse p{
         max-width: 100%;
@@ -299,7 +397,7 @@ header a span::before {
 }
 
 .ebook .right img{
-    width: 70%;
+    width: 60%;
 }
 
 @media (max-width: 800px)  {
@@ -332,9 +430,33 @@ header a span::before {
 
 
 
+.faqSection{
+    align-items: flex-start;
+    gap: 5vh;
+}
 
+.faqContainer{
+    width: 100%;
+}
 
+.faqContainer .quest, .faqContainer .answer{
+    padding: 20px 0;
+    border-bottom: 2px solid var(--primary_normal);
+    cursor: pointer;
+}
 
+.faqContainer .quest p{
+    font-size: 20px;
+}
+
+.faqContainer .quest span{
+    font-weight: 700;
+}
+
+.faqContainer .answer{
+    cursor: default;
+    display: none;
+}
 
 
 @media (max-width: 800px) {
@@ -345,4 +467,32 @@ header a span::before {
     .areaExplain .contents img{
         max-width: 100%;
     }
+
+    .popup .img-text{
+        gap: 5vh;
+        grid-template-columns: 1fr;
+      }
+    
+      .popup .img-text .right:has(img){
+        align-items: center;
+      }
+    
+      .popup .img-text .right img{
+        max-width: 100%;
+        height: auto;
+        transform: translateX(0)
+      }
+    
+      .inverter .left{
+        order: 1;
+      }
+    
+      .inverter .right{
+        order: 2;
+      }
+    
+      .popupCloser{
+        top: 30px;
+        right: 30px;
+      }
 }
