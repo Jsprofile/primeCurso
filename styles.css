@@ -439,7 +439,7 @@ header a span::before {
     width: 100%;
 }
 
-.faqContainer .quest, .faqContainer .answer{
+.faqContainer .quest{
     padding: 20px 0;
     border-bottom: 2px solid var(--primary_normal);
     cursor: pointer;
@@ -455,9 +455,16 @@ header a span::before {
 
 .faqContainer .answer{
     cursor: default;
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: max-height 0.2s ease-out;
 }
 
+.activeAnswer{
+    border-bottom: 2px solid var(--primary_normal);
+    transition: padding .5s ease-out;
+}
 
 @media (max-width: 800px) {
     .grid2 .left, .grid2 .right, .inverter .left, .inverter .right{

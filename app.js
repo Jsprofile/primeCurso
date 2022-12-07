@@ -33,3 +33,30 @@ popupClosers.forEach(closer =>{
     })
   })
 })
+
+
+
+
+//FAQ activing
+
+const quests = document.querySelectorAll('.quest')
+
+quests.forEach(quest =>{
+  quest.addEventListener('click', ()=>{
+    var answer = quest.nextElementSibling
+    answer.classList.toggle('activeAnswer')
+
+    var answerClass = answer.classList
+    var answerP = answer.querySelector(`.${answerClass[0]} p`)
+
+    console.log(answerP)
+
+    var ansHeight = answer.scrollHeight + 40
+
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      answer.style.maxHeight = ansHeight + "px";
+    } 
+  })
+})
