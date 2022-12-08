@@ -405,6 +405,9 @@ a {
   font-size: 1em;
 }
 
+.differentials::-webkit-scrollbar{
+  display: none;
+}
 
 
 

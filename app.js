@@ -1,13 +1,30 @@
 // Header
 
+const header = document.querySelector("header")
 const barsContainer = document.querySelector(".bar")
 const nav = document.querySelector("nav")
+const navOptions = document.querySelectorAll("nav a")
 
 
 barsContainer.addEventListener('click', ()=>{
     barsContainer.classList.toggle("activeBars")
     nav.classList.toggle('activeNav')
 })
+
+navOptions.forEach(navOption =>{
+  navOption.addEventListener('click', ()=>{
+    console.log(navOption)
+    nav.classList.remove('activeNav')
+  })
+})
+
+window.onscroll = () =>{
+  if(window.pageYOffset > 100){
+    header.classList.add('activeHeader')
+  }else{
+    header.classList.remove('activeHeader')
+  }
+}
 
 
 //Ppupers activing
@@ -31,6 +48,25 @@ popupClosers.forEach(closer =>{
     [...wrappers].map(e => {
       e.style.display = 'none'
     })
+  })
+})
+
+
+//Grade activing
+
+const gradeTitles = document.querySelectorAll('.gradeTitle')
+
+gradeTitles.forEach(gradeTitle =>{
+  gradeTitle.addEventListener('click', ()=>{
+    var gradeContent = gradeTitle.nextElementSibling
+    gradeContent.classList.toggle('activegradeContent')
+
+
+    if (gradeContent.style.maxHeight) {
+      gradeContent.style.maxHeight = null;
+    } else {
+      gradeContent.style.maxHeight = gradeContent.scrollHeight + "px";
+    } 
   })
 })
 

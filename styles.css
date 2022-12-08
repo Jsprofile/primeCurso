@@ -25,10 +25,11 @@ header {
     align-items: center;
     padding: 20px 5%;
     background: transparent;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 100000000000;
+    z-index: 1000000;
+    transition: .5s;
 }
 
 header img {
@@ -94,6 +95,12 @@ header a span::before {
 
 .activeNav {
     transform: translateX(0);
+}
+
+.activeHeader{
+    background-color: #ffffff24;
+    backdrop-filter: blur(10px);
+    transition: .5s;
 }
 
 
@@ -295,6 +302,12 @@ header a span::before {
         font-weight: 600;
         line-height: 6vh;
     }
+
+    .popupCloser{
+        max-width: 25px;
+        top: 15px;
+        right: 15px;
+    } 
 }
 
 
@@ -305,7 +318,49 @@ header a span::before {
 .grade{
     flex-direction: column;
     align-items: flex-start;
+    gap: 5vh;
 }
+
+.gradeContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.gradeContainer .gradeTitle{
+    padding: 20px;
+    border: 2px solid var(--primary_normal);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.gradeContainer .gradeTitle p{
+    font-size: 20px;
+}
+
+.gradeContainer .gradeTitle span{
+    font-weight: 700;
+}
+
+.gradeContainer .gradeContent{
+    cursor: default;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: max-height 0.2s ease-out;
+}
+
+.gradeContainer .gradeContent p{
+    margin: 15px 0;
+}
+
+.activeAnswer{
+    border-bottom: 2px solid var(--primary_normal);
+    transition: padding .5s ease-out;
+}
+
+
 
 
 
@@ -459,6 +514,10 @@ header a span::before {
     overflow: hidden;
     padding: 0 20px;
     transition: max-height 0.2s ease-out;
+}
+
+.faqContainer .answer p{
+    margin: 15px 0;
 }
 
 .activeAnswer{
