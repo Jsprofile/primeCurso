@@ -13,7 +13,7 @@ barsContainer.addEventListener('click', ()=>{
 
 navOptions.forEach(navOption =>{
   navOption.addEventListener('click', ()=>{
-    console.log(navOption)
+    barsContainer.classList.remove("activeBars")
     nav.classList.remove('activeNav')
   })
 })
